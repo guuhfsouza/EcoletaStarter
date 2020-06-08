@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura o o documento parqa diversos tipos de tela -->
+    <meta charset="UTF-8">
+    <title>Ecoleta</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/styles/main.css"> <!-- import do css para arquivos html-->
+    <link rel="stylesheet" href="/styles/search-results.css"> <!-- import do css para arquivos html-->
+    <link rel="stylesheet" href="/styles/responsive.css"> <!-- import do css para arquivos html-->
+</head>
+<body>
+    <div id="page-search-results">
+        {%include "partials/page-header.html" %}
+
+        <main >
+        
+        {# estrutura de repetição nunjucks - como se fosse o map do react #}
+        {% if total > 0 %}
+            <h4>
+                <strong>{{total}} pontos</strong> encontrados
+            </h4>
+            <div class="cards">
+            {# estrutura de repetição nunjucks - como se fosse o map do react #}
+            {% for place in places %}
+                <div class="card">
+                    <img src="{{place.image}}" alt="{{place.name}}">
+                    <h1>{{place.name}}</h1>
+                    <h3>{{place.items}}</h3>
+                    <p>
+                        {{place.city + ', ' + place.state}} </br>
+                        {{place.address}} </br>
+                        {{place.address2}} 
+                    </p>
+                </div>
+            {% endfor %}
+            </div>
+        {%else%}
+        <h4><strong>Nenhum</strong> local encontrado</h4>
+        {% endif %}
+            
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura o o documento parqa diversos tipos de tela -->
+    <meta charset="UTF-8">
+    <title>Ecoleta</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/styles/main.css"> <!-- import do css para arquivos html-->
+    <link rel="stylesheet" href="/styles/home.css"> <!-- import do css para arquivos html-->
+    <link rel="stylesheet" href="/styles/modal.css"> <!-- import do css para arquivos html-->
+    <link rel="stylesheet" href="/styles/responsive.css"> <!-- import do css para arquivos html-->
+</head>
+<body>
+    <div id="page-home">
+        <div class="content">
+            <header>
+                <img src="/assets/logo.svg" alt="Logomarca">
+                <a href="\create-point">
+                    <span>
+                    </span> 
+                    Cadastre um ponto de coleta</a>
+            </header>
+            <main> <!-- tag main mostra que isso será o principal da pagina ou com informações
+            principais da pagina-->
+                <h1> Seu marketplace de coletas de resíduos</h1>
+                <p>Ajudamos pessoas a encontrar pontos de coletas de forma eficiente.</p>
+                <a href="#">
+                    <span></span>
+                    <strong>Pesquisar pontos de coleta</strong> 
+                </a>
+            </main>       
+        </div>
+    </div>
+
+    {%include "partials/modal.html"%} <!--são includes de arquivos que são usados em mais de uma página. 
+    Esse include vem do nunjucks-->
+    
+    <script src="/scripts/index.js"></script>
+</body>
+</html>
